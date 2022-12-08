@@ -28,9 +28,9 @@ public class Main {
         Employee employeeOne = new Employee("Rachel", 41, 60000, "Kansas City");
         Employee employeeTwo = new Employee("Mrs. Fox", 40, 45000, "Independence");
         System.out.println(employeeOne.name);
-        System.out.println(employeeOne.raiseSalary(10000));
+        System.out.println(employeeOne.raiseSalary());
         System.out.println(employeeTwo.name);
-        System.out.println(employeeTwo.raiseSalary(10000));
+        System.out.println(employeeTwo.raiseSalary());
 
 
     }

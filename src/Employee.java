@@ -11,8 +11,8 @@ public class Employee {
         this.location = location;
     }
 
-    public double raiseSalary(double raiseAmount){
-       double newSalary =  this.salary + raiseAmount;
+    public double raiseSalary(){
+       double newSalary =  this.salary + 10000;
        return newSalary;
     }
 
