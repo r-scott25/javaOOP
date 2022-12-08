@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Stack;
 
 public class Main {
     public static void main(String[] args) {
@@ -88,7 +90,37 @@ public class Main {
 ////          Print receipt with updated balance: 700
 //        System.out.println(myBankAccount.getBalance());
 
+//
+//        ////////////////////////////////////////////////////////////
+//        ///////////////////////// Inheritance //////////////////////
+//        //////////////////// Java's Stack Class ////////////////////
+//        ////////////////////////////////////////////////////////////
+//
+//        Stack<Character> charStack = new Stack<Character>();
+//
+//        charStack.push('c');
+//        charStack.push('a');
+//        charStack.push('t');
+//
+//        System.out.println(charStack.pop());
+//        System.out.println(charStack.pop());
+//        System.out.println(charStack.pop());
 
 
+
+        ////////////////////////////////////////////////////////////
+        //////////////////// Inheritance Challenge /////////////////
+        // ModArrayList Class (as a subclass of ArrayList class) ///
+        ////////////////////////////////////////////////////////////
+
+        ModArrayList listy = new ModArrayList();
+        listy.add(0);
+        listy.add(10);
+        listy.add(20);
+        listy.add(30);
+
+       System.out.println(listy.getUsingMod(1));
+       System.out.println(listy.getUsingMod(-2));
+       System.out.println(listy.getUsingMod(40));
     }
 }
