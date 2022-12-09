@@ -283,12 +283,29 @@ import java.util.function.Predicate;
         //////////////////// Abstract File Reader //////////////////
         ////////////////////////////////////////////////////////////
 
+//public class Main {
+//
+//    public static void main(String[] args) throws IOException {
+//       DigitsOnlyFileReader digitsOnlyFileReader = new DigitsOnlyFileReader("message.txt");
+//
+//       System.out.println(digitsOnlyFileReader.readFile());
+//       System.out.println(digitsOnlyFileReader.getPath());
+//    }
+//}
+
+
 public class Main {
-
     public static void main(String[] args) throws IOException {
-       DigitsOnlyFileReader digitsOnlyFileReader = new DigitsOnlyFileReader("message.txt");
+        PasswordChangeEvent eventOne = new PasswordChangeEvent("123456789");
+        AccountTransferPaymentEvent eventTwo = new AccountTransferPaymentEvent("6545315694");
+        MissedPaymentEvent eventThree = new MissedPaymentEvent("45585522");
 
-       System.out.println(digitsOnlyFileReader.readFile());
-       System.out.println(digitsOnlyFileReader.getPath());
+        Event[] events = {eventOne, eventTwo, eventThree};
+
+        for (Event e : events) {
+            System.out.println(e.getTimeStamp());
+            e.process();
+            System.out.println();
+        }
     }
 }
