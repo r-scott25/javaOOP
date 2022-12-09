@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.locks.Condition;
@@ -134,7 +135,7 @@ import java.util.function.Predicate;
 
 //        /////////////////////////////////////////////////////////////
 //        ///////////////////////// Polymorphism //////////////////////
-//        //////////////////////// ConditionalArrayList ///////////////////////
+//        //////////////////// ConditionalArrayList ///////////////////
 //        ////////////////////////////////////////////////////////////
 //
 //        ConditionalArrayList oddListy = new ConditionalArrayList(1, 2, 3, 4, 9, -13);
@@ -156,7 +157,7 @@ import java.util.function.Predicate;
 
         /////////////////////////////////////////////////////////////
         ///////////////////////// Polymorphism //////////////////////
-        /////////////// ConditionalArrayList - Diff Forms in 1 Obj /////////
+        //////// ConditionalArrayList - Diff Forms in 1 Obj /////////
         ////////////////////////////////////////////////////////////
 
 
@@ -257,22 +258,54 @@ import java.util.function.Predicate;
 //
 //    }
 
+//public class Main {
+//    public static void main(String[] args) {
+//
+//        Contact contactOne = new Contact("Sally", new PhoneNumber("1234567890"));
+//        Contact contactTwo = new Contact("Johnny", new PhoneNumber("1234567890"), "johnny@gmail.com");
+//        Contact contactThree = new Contact("Joe", new PhoneNumber(1, "1234567890"));
+//        Contact contactFour = new Contact("Jane ", new PhoneNumber("0987654321"));
+//        Contact contactFive = new Contact("Sunshine Walker", "sunshine@waler.com");
+//
+//
+//
+//        System.out.println(contactOne);
+//        System.out.println(contactTwo);
+//        System.out.println(contactThree);
+//        System.out.println(contactFour);
+//        System.out.println(contactFive);
+//
+//    }
+//}
+
+        /////////////////////////////////////////////////////////////
+        ///////////////////////// Abstraction //////////////////////
+        //////////////////// Abstract File Reader //////////////////
+        ////////////////////////////////////////////////////////////
+
+//public class Main {
+//
+//    public static void main(String[] args) throws IOException {
+//       DigitsOnlyFileReader digitsOnlyFileReader = new DigitsOnlyFileReader("message.txt");
+//
+//       System.out.println(digitsOnlyFileReader.readFile());
+//       System.out.println(digitsOnlyFileReader.getPath());
+//    }
+//}
+
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        PasswordChangeEvent eventOne = new PasswordChangeEvent("123456789");
+        AccountTransferPaymentEvent eventTwo = new AccountTransferPaymentEvent("6545315694");
+        MissedPaymentEvent eventThree = new MissedPaymentEvent("45585522");
 
-        Contact contactOne = new Contact("Sally", new PhoneNumber("1234567890"));
-        Contact contactTwo = new Contact("Johnny", new PhoneNumber("1234567890"), "johnny@gmail.com");
-        Contact contactThree = new Contact("Joe", new PhoneNumber(1, "1234567890"));
-        Contact contactFour = new Contact("Jane ", new PhoneNumber("0987654321"));
-        Contact contactFive = new Contact("Sunshine Walker", "sunshine@waler.com");
+        Event[] events = {eventOne, eventTwo, eventThree};
 
-
-
-        System.out.println(contactOne);
-        System.out.println(contactTwo);
-        System.out.println(contactThree);
-        System.out.println(contactFour);
-        System.out.println(contactFive);
-
+        for (Event e : events) {
+            System.out.println(e.getTimeStamp());
+            e.process();
+            System.out.println();
+        }
     }
 }
