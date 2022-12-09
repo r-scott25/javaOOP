@@ -1,18 +1,10 @@
 import java.sql.Timestamp;
 
-public class MissedPaymentEvent implements Event{
+public class MissedPaymentEvent extends AbstractEvent{
 
-    private Long createdTimestamp;
-    private String id;
 
     public MissedPaymentEvent(String id) {
-        this.createdTimestamp = new Timestamp(System.currentTimeMillis()).getTime();
-        this.id = id;
-    }
-
-    @Override
-    public Long getTimeStamp() {
-        return this.createdTimestamp;
+        super(id);
     }
 
     @Override
